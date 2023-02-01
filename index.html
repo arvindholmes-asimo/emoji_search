@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            margin: 0;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 120px;
+            text-align: center;
+            border: 1px solid gray;
+            margin: 3px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .emoji-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .emoji-name {
+            overflow-wrap: break-word;
+        }
+
+        #emoji-copied {
+            font-size: 24px;
+        }
+
+        #emoji-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .notification {
+            font-size: 16px;
+            font-weight: bold;
+            position: fixed;
+            left: 0;
+            bottom: -80px;
+            height: 80px;
+            width: 100%;
+            background: white;
+            border-top: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: bottom .5s ease-in-out;
+        }
+
+        .active {
+            bottom: 0;
+        }
+
+        .search-box {
+            height: 36px;
+            max-width: 768px;
+            margin: 0 auto;
+            /* text-align: center; */
+            border: 1px solid gray;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 50rem;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            max-width: 768px;
+            width: 100%;
+            height: 100%;
+            padding: 2px 8px 2px 24px;
+        }
+
+        .search-box .icon {
+            border: none;
+            background: none;
+            outline: none;
+            height: 100%;
+            border-left: 1px solid grey;
+        }
+        .network{
+            text-align: center;
+            background: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="network">
+        <p class="status"></p>
+    </div>
+    <div class="notification">
+        <p>Emoji Copied to clipboard </p> <span id="emoji-copied"></span>
+    </div>
+
+    <div class="search-section">
+        <div class="search-box">
+            <input placeholder="Search Emoji" type="search" id="search-input" value="">
+            <button class="icon search-icon" id="search-btn">search</button>
+            <button class="icon mic-icon" id="mic-btn">mic</button>
+        </div>
+        <div>
+            <label for="#emoji-filters">Filters</label>
+            <select name="emoji-filters" id="emoji-filters">
+            </select>
+        </div>
+
+    </div>
+
+    <div id="emoji-container">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
